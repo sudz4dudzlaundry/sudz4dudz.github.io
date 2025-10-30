@@ -1,97 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudz4Dudz Laundromat</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sudz4Dudz Laundromat – Hurst, TX</title>
+  <meta name="description" content="Clean, friendly self-serve laundry and Wash & Fold service in Hurst, TX. Open daily at 7am. Wash & Fold available for drop off or pick up from 2–7pm. Pay with PayRange app!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #0077cc;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    header p { margin: 0.5rem 0 0; }
-    section {
-      padding: 2rem 1rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      color: #0077cc;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.5rem;
-    }
-    .btn {
-      display: inline-block;
-      margin: 0.5rem 0;
-      padding: 0.75rem 1.25rem;
-      background: #0077cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-    .btn:hover { background: #005fa3; }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Sudz4Dudz Laundromat</h1>
-    <p>Clean • Fast • Friendly Service</p>
-    <a href="https://maps.google.com?q=846+W+Pipeline+Hurst+TX+76053" class="btn">📍 Get Directions</a>
-    <a href="tel:9723065261" class="btn">📞 Call Now</a>
+<body class="bg-slate-50 text-slate-800">
+  <!-- Top bar -->
+  <header class="bg-sky-700 text-white">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="font-extrabold tracking-tight text-xl">Sudz4Dudz</a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#pricing" class="hover:opacity-90">Pricing</a>
+        <a href="#hours" class="hover:opacity-90">Hours</a>
+        <a href="#location" class="hover:opacity-90">Location</a>
+        <a href="#contact" class="hover:opacity-90">Contact</a>
+      </nav>
+      <a href="tel:+19723065261" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 transition rounded-xl px-3 py-2 text-sm">
+        972-306-5261
+      </a>
+    </div>
   </header>
 
-  <section>
-    <h2>🕒 Hours</h2>
-    <p>Open 7:00 AM Every Day<br>
-       Last Wash: 8:00 PM (Mon–Sat)<br>
-       Last Wash: 7:00 PM (Sunday)</p>
+  <!-- Hero -->
+  <section id="home" class="relative isolate">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-sky-100 to-transparent"></div>
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Clean. Fast. Friendly.<br><span class="text-sky-700">Hurst’s go-to laundromat.</span></h1>
+        <p class="mt-4 text-lg text-slate-700">Open daily at 7am. Last wash 8pm Mon–Sat, 7pm Sun. Wash & Fold drop-off and pick-up available from 2–7pm every day.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#pricing" class="bg-sky-700 text-white px-5 py-3 rounded-2xl hover:-translate-y-0.5 transition">See Pricing</a>
+          <a href="#location" class="px-5 py-3 rounded-2xl ring-1 ring-slate-300 hover:bg-white transition">Get Directions</a>
+        </div>
+        <div class="mt-6 inline-flex items-center gap-2 rounded-xl bg-amber-100 text-amber-900 px-3 py-2 text-sm">
+          <span class="font-semibold">Now offering Wash & Fold</span> — $1.75/lb, drop off or pick up 2–7pm
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl shadow-xl p-6 ring-1 ring-slate-200">
+        <div class="grid grid-cols-2 gap-4 text-sm">
+          <div class="p-4 rounded-2xl bg-slate-50">
+            <div class="text-xs text-slate-500">3-Load Washer</div>
+            <div class="text-2xl font-bold">$4</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-50">
+            <div class="text-xs text-slate-500">4-Load Washer</div>
+            <div class="text-2xl font-bold">$5</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-50">
+            <div class="text-xs text-slate-500">5-Load Washer</div>
+            <div class="text-2xl font-bold">$6</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-50">
+            <div class="text-xs text-slate-500">Dryers (30 min)</div>
+            <div class="text-2xl font-bold">$1.50</div>
+          </div>
+        </div>
+        <ul class="mt-4 text-sm text-slate-600 list-disc list-inside">
+          <li>Ample machines • Coin + PayRange enabled</li>
+          <li>Bright, clean, and air-conditioned</li>
+          <li>Free Wi-Fi</li>
+        </ul>
+        <div class="mt-4 p-3 bg-sky-50 rounded-xl text-sky-800 text-sm">
+          <strong>New!</strong> Pay with the PayRange app. Works with all credit cards. For a limited time, get your first wash <strong>FREE</strong> on PayRange-enabled machines!
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>🚿 Services</h2>
-    <ul>
-      <li>Self-Service Washers & Dryers</li>
-      <li>Wash & Fold Service – Coming Soon!</li>
-    </ul>
+  <!-- Pricing -->
+  <section id="pricing" class="py-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-extrabold">Simple, transparent pricing</h2>
+      <div class="mt-6 grid md:grid-cols-5 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200">
+          <div class="text-sm text-slate-500">3-Load Washer</div>
+          <div class="text-3xl font-extrabold mt-1">$4</div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200">
+          <div class="text-sm text-slate-500">4-Load Washer</div>
+          <div class="text-3xl font-extrabold mt-1">$5</div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200">
+          <div class="text-sm text-slate-500">5-Load Washer</div>
+          <div class="text-3xl font-extrabold mt-1">$6</div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200">
+          <div class="text-sm text-slate-500">Dryers (30 min)</div>
+          <div class="text-3xl font-extrabold mt-1">$1.50</div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200">
+          <div class="text-sm text-slate-500">Wash & Fold Service</div>
+          <div class="text-3xl font-extrabold mt-1">$1.75/lb</div>
+          <div class="text-xs text-slate-500 mt-1">Drop off or pick up 2–7pm</div>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-slate-600">Prices subject to change. See in-store signage for the latest.</p>
+    </div>
   </section>
 
-  <section>
-    <h2>💲 Pricing</h2>
-    <ul>
-      <li>3 Load Washer: $4.00</li>
-      <li>4 Load Washer: $5.00</li>
-      <li>5 Load Washer: $6.00</li>
-      <li>Dryers: $1.50 / 30 min</li>
-    </ul>
+  <!-- Hours -->
+  <section id="hours" class="py-14 bg-slate-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-extrabold">Hours</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200">
+          <h3 class="font-semibold">Open daily</h3>
+          <p class="mt-2">Doors open at <strong>7:00 AM</strong> every day.</p>
+          <ul class="mt-4 text-sm text-slate-700 space-y-1">
+            <li><strong>Mon–Sat:</strong> Last wash 8:00 PM</li>
+            <li><strong>Sun:</strong> Last wash 7:00 PM</li>
+            <li><strong>Wash & Fold Drop Off/Pick Up:</strong> 2:00–7:00 PM daily</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200">
+          <h3 class="font-semibold">Services</h3>
+          <ul class="mt-2 text-sm text-slate-700 list-disc list-inside">
+            <li>Self-service laundry (large capacity)</li>
+            <li>Wash & Fold drop off or pickup 2–7pm</li>
+            <li>Coin + PayRange app payments</li>
+            <li>Plenty of folding space</li>
+            <li>Change & vending on site</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>📞 Contact</h2>
-    <p>📍 846 W. Pipeline, Hurst, TX 76053</p>
-    <p>📞 (972) 306-5261</p>
-    <p>📧 Sudz4DudzLaundry@gmail.com</p>
+  <!-- Location -->
+  <section id="location" class="py-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-extrabold">Find us</h2>
+      <div class="mt-6 grid lg:grid-cols-2 gap-6 items-start">
+        <div class="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200">
+          <p class="text-lg font-semibold">846 W. Pipeline, Hurst, TX 76053</p>
+          <p class="text-sm text-slate-600 mt-1">Near Pipeline Rd & Brown Trail</p>
+          <div class="mt-4 flex gap-3 flex-wrap">
+            <a class="px-4 py-2 rounded-xl bg-sky-700 text-white hover:-translate-y-0.5 transition" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=846+W.+Pipeline%2C+Hurst%2C+TX+76053">Open in Google Maps</a>
+            <a class="px-4 py-2 rounded-xl ring-1 ring-slate-300 hover:bg-white transition" href="tel:+19723065261">Call 972-306-5261</a>
+          </div>
+        </div>
+        <iframe class="w-full aspect-video rounded-2xl shadow ring-1 ring-slate-200" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=846+W.+Pipeline,+Hurst,+TX+76053&output=embed"></iframe>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Sudz4Dudz Laundromat</p>
+  <!-- Contact -->
+  <section id="contact" class="py-14 bg-slate-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-extrabold">Contact</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200">
+          <p class="text-sm text-slate-700">Questions or feedback? Shoot us a note.</p>
+          <a href="mailto:info@sudz4dudz.com" class="inline-block mt-4 px-5 py-3 rounded-2xl bg-sky-700 text-white">Email us</a>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200 text-sm text-slate-600">
+          <p>Now accepting the <strong>PayRange</strong> app for all payments!</p>
+          <p class="mt-2">Install PayRange and get your <strong>first wash FREE</strong> on PayRange-enabled machines (limited time offer).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center text-xs text-slate-500">
+    <p>&copy; <span id="y"></span> Sudz4Dudz. All rights reserved.</p>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
 </body>
 </html>
