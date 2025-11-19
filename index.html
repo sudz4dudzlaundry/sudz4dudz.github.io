@@ -17,6 +17,7 @@
       color: white;
       padding: 20px;
       text-align: center;
+      position: relative;
     }
     .wacky-banner {
       background: linear-gradient(45deg, #ffde59, #ff914d);
@@ -41,6 +42,25 @@
       width: 100%;
       bottom: 0;
     }
+    .lang-toggle {
+      margin-top: 15px;
+    }
+    .lang-toggle a {
+      padding: 8px 14px;
+      border-radius: 5px;
+      margin-right: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .lang-en {
+      background: #f1f1f1;
+      color: #000;
+    }
+    .lang-es {
+      background: #007bff;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -48,6 +68,12 @@
     <h1>Sudz4Dudz Laundromat</h1>
     <p>846 W. Pipeline, Hurst TX 76053</p>
     <p>Open Daily at 7AM — Last Wash: 8PM (Mon-Sat), 7PM (Sun)</p>
+
+    <!-- Language toggle -->
+    <div class="lang-toggle">
+      <a href="/" class="lang-en" onclick="localStorage.setItem('s4d_lang','en')">English</a>
+      <a href="/es/" class="lang-es" onclick="localStorage.setItem('s4d_lang','es')">Español</a>
+    </div>
   </header>
 
   <div class="wacky-banner">
@@ -74,5 +100,25 @@
   <footer>
     &copy; 2025 Sudz4Dudz. All rights reserved.
   </footer>
+
+  <!-- Auto-language redirect script -->
+  <script>
+    (function() {
+      try {
+        var path = window.location.pathname;
+        var pref = localStorage.getItem('s4d_lang');
+
+        // Only auto-redirect on main page if user has no saved preference
+        if ((!pref || pref === '') && (path === '/' || path === '/index.html')) {
+          var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+          if (lang.startsWith('es')) {
+            window.location.href = '/es/';
+          }
+        }
+      } catch (e) {
+        // ignore if localStorage is blocked
+      }
+    })();
+  </script>
 </body>
 </html>
