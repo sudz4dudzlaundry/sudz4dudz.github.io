@@ -1,1 +1,119 @@
-es/index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudz4Dudz Lavandería</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f6f6f6;
+      color: #333;
+    }
+    header {
+      background-color: #1e90ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .wacky-banner {
+      background: linear-gradient(45deg, #ffde59, #ff914d);
+      color: #222;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    footer {
+      background-color: #1e90ff;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    .lang-toggle {
+      margin-top: 15px;
+    }
+    .lang-toggle a {
+      padding: 8px 14px;
+      border-radius: 5px;
+      margin-right: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .lang-en {
+      background: #f1f1f1;
+      color: #000;
+    }
+    .lang-es {
+      background: #007bff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sudz4Dudz Lavandería</h1>
+    <p>846 W. Pipeline, Hurst TX 76053</p>
+    <p>Abierto todos los días desde las 7 a.m. — Último lavado: 8 p.m. (lun–sáb), 7 p.m. (dom)</p>
+
+    <!-- Selector de idioma -->
+    <div class="lang-toggle">
+      <a href="/" class="lang-en" onclick="localStorage.setItem('s4d_lang','en')">English</a>
+      <a href="/es/" class="lang-es" onclick="localStorage.setItem('s4d_lang','es')">Español</a>
+    </div>
+  </header>
+
+  <div class="wacky-banner">
+    ✨ ¡MIÉRCOLES LOCO DE LAVADO! — ¡LAVADORAS A MITAD DE PRECIO TODO EL DÍA! ✨<br>
+    Ahorra en grande cada miércoles solo en <strong>Sudz4Dudz</strong>
+  </div>
+
+  <main>
+    <h2>Servicios y precios</h2>
+    <ul>
+      <li>Lavadora de 3 cargas: $4</li>
+      <li>Lavadora de 4 cargas: $5</li>
+      <li>Lavadora de 5 cargas: $6</li>
+      <li>Secadoras: 30 min por $1.50</li>
+    </ul>
+
+    <h2>Lavado y doblado (Wash &amp; Fold)</h2>
+    <p>Desde $1.75 por libra. Deja tu ropa y recógela en la lavandería de 2 p.m. a 7 p.m.</p>
+
+    <h2>Métodos de pago</h2>
+    <p>Aceptamos la app <strong>PayRange</strong> (funciona con la mayoría de tarjetas de débito y crédito).  
+    Por tiempo limitado, instala la app y recibe tu <strong>primer lavado GRATIS</strong> en las máquinas con PayRange.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Sudz4Dudz. Todos los derechos reservados.
+  </footer>
+
+  <!-- Guardar preferencia de idioma cuando usen la versión en español -->
+  <script>
+    (function() {
+      try {
+        var pref = localStorage.getItem('s4d_lang');
+        if (!pref) {
+          localStorage.setItem('s4d_lang','es');
+        }
+      } catch (e) {
+        // ignorar si localStorage no está disponible
+      }
+    })();
+  </script>
+</body>
+</html>
+
