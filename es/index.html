@@ -1,151 +1,170 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sudz 4 Dudz Lavandería</title>
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f6f9fb;
-  color: #222;
-  text-align: center;
+:root{
+  --blue:#1e90ff;
+  --bg:#f6f9fb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#54606f;
+  --shadow:0 10px 22px rgba(0,0,0,.10);
+  --gold:#ffd64d;
+  --gold2:#fff3b0;
 }
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(180deg,#e8f4ff,#ffffff);padding:18px 14px 12px;text-align:center}
+.logo{max-width:320px;width:80vw;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.12))}
+h1{margin:10px 0 4px;font-size:clamp(24px,5vw,40px);letter-spacing:.7px}
+.addr{margin:0;color:var(--muted);font-weight:700}
+.hours{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:12px;background:#fff;box-shadow:var(--shadow);font-weight:900}
+.hours small{display:block;margin-top:5px;font-weight:700;color:var(--muted);font-size:13px}
+.lang{margin-top:12px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.lang a{padding:8px 12px;border-radius:10px;border:1px solid rgba(0,0,0,.12);background:#fff;text-decoration:none;font-weight:900;color:var(--text)}
+.lang a.active{background:var(--blue);border-color:transparent;color:#fff}
 
-header {
-  background: #e8f4fb;
-  padding: 20px;
-}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+.banner{border-radius:18px;padding:16px 14px;text-align:center;box-shadow:var(--shadow);margin:12px 0}
+.ffw{background:linear-gradient(135deg,var(--gold2),var(--gold));border:3px solid rgba(0,0,0,.10)}
+.ffw h2{margin:0 0 6px;font-size:clamp(22px,4.7vw,38px);letter-spacing:1px}
+.ffw p{margin:0;font-weight:800}
+.ffw .badge{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);font-weight:900;box-shadow:0 8px 16px rgba(0,0,0,.10)}
 
-header img {
-  max-width: 260px;
-}
+.www{background:linear-gradient(135deg,#d7f0ff,#a9ddff);border:2px dashed rgba(0,0,0,.22);display:none}
+.www.dim{opacity:.55;filter:saturate(.85)}
+.www h2{margin:0 0 6px;font-size:clamp(20px,4.3vw,34px)}
+.www p{margin:0}
+.small{color:var(--muted);font-size:13px;margin-top:8px}
 
-h1 {
-  margin: 10px 0 5px;
-}
-
-.hours {
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.section {
-  background: #ffffff;
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 900px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.highlight {
-  background: #fff3cd;
-  border: 2px solid #ffcc00;
-  font-size: 1.4em;
-  font-weight: bold;
-}
-
-.wacky {
-  background: linear-gradient(45deg,#d9f1ff,#ffffff);
-  border: 3px dashed #1e90ff;
-  font-size: 1.3em;
-}
-
-.services ul {
-  list-style: none;
-  padding: 0;
-  font-size: 1.1em;
-}
-
-.services li {
-  margin: 8px 0;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 24px;
-  background: #1e90ff;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-footer {
-  margin: 40px 0 20px;
-  color: #666;
-  font-size: 0.9em;
-}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:14px}
+.card.full{grid-column:1 / -1}
+.card h3{margin:0 0 10px;color:var(--blue);font-size:20px}
+ul{margin:8px 0 0;padding-left:18px}
+li{margin:6px 0}
+.kv{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.kv li{padding:10px 12px;border-radius:12px;background:rgba(30,144,255,.10);border:1px solid rgba(30,144,255,.18);font-weight:900}
+.btn{display:inline-block;padding:12px 16px;border-radius:12px;background:var(--blue);color:#fff;text-decoration:none;font-weight:900}
+footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13px}
 </style>
 </head>
 
 <body>
-
 <header>
-  <img src="../Sudz4Dudz_Logo_Bubbles.png" alt="Sudz 4 Dudz Logo">
+  <img class="logo" src="../Sudz4Dudz_Logo_Bubbles.png" alt="Sudz 4 Dudz Logo" />
   <h1>Sudz 4 Dudz Lavandería</h1>
-  <p>846 W Pipeline Rd, Hurst, TX 76053</p>
+  <p class="addr">846 W Pipeline Rd, Hurst, TX 76053</p>
 
   <div class="hours">
-    ABIERTO TODOS LOS DÍAS A LAS 7:00 AM<br>
-    Último lavado: 8:00 PM (Lun–Sáb)<br>
-    Último lavado: 7:00 PM (Domingo)
+    ABIERTO TODOS LOS DÍAS 7:00 AM
+    <small>Último lavado: Lun–Sáb 8:00 PM · Domingo 7:00 PM</small>
+  </div>
+
+  <div class="lang">
+    <a href="/" onclick="try{localStorage.setItem('s4d_lang_chosen','en')}catch(e){}">English</a>
+    <a class="active" href="/es/" onclick="try{localStorage.setItem('s4d_lang_chosen','es')}catch(e){}">Español</a>
   </div>
 </header>
 
-<!-- PRIMER LAVADO GRATIS -->
-<div class="section highlight">
-  PRIMER LAVADO GRATIS<br>
-  <small>Consulte con el encargado o vea los avisos en la tienda</small>
+<div class="wrap">
+
+  <!-- FFW ALWAYS -->
+  <section class="banner ffw">
+    <h2>PRIMERA LAVADA GRATIS</h2>
+    <p>Nuevos clientes — pregúntanos cómo obtener tu primera lavada gratis.</p>
+    <div class="badge">Pregunta en tienda • Rápido y fácil</div>
+  </section>
+
+  <!-- WWW TIMED -->
+  <section class="banner www" id="wwwBanner">
+    <h2>MIÉRCOLES DE LAVADO LOCO</h2>
+    <p><strong>50% DE DESCUENTO</strong> en lavadas de autoservicio</p>
+    <div class="small">Se muestra mar 5:00 PM (tease) → mié 6:30 PM, luego se atenúa hasta el cierre.</div>
+  </section>
+
+  <div class="grid">
+    <section class="card full">
+      <h3>Servicios y Precios</h3>
+      <div class="grid" style="margin-top:0">
+        <div class="card" style="box-shadow:none;border:1px solid rgba(0,0,0,.08)">
+          <h3 style="margin-top:0">Lavado de Autoservicio</h3>
+          <ul>
+            <li>Lavadora 3 cargas: <strong>$4</strong></li>
+            <li>Lavadora 4 cargas: <strong>$5</strong></li>
+            <li>Lavadora 5 cargas: <strong>$6</strong></li>
+            <li>Secadoras: <strong>$1.50 / 30 minutos</strong></li>
+          </ul>
+        </div>
+        <div class="card" style="box-shadow:none;border:1px solid rgba(0,0,0,.08)">
+          <h3 style="margin-top:0">Lavado y Doblado</h3>
+          <p style="margin:0 0 6px"><strong>$1.75 por libra</strong></p>
+          <p style="margin:0">Entrega o recogida <strong>2:00 PM – 7:00 PM</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Pago</h3>
+      <ul class="kv">
+        <li>Todas las máquinas aceptan monedas</li>
+        <li>Hay máquinas de cambio</li>
+        <li>Algunas máquinas tienen PayRange</li>
+      </ul>
+      <p class="small">Busca la calcomanía de PayRange en la máquina.</p>
+    </section>
+
+    <section class="card">
+      <h3>Acerca de</h3>
+      <p style="margin:0">Limpio, brillante y fácil de usar. Máquinas grandes para cargas grandes y muchas secadoras.</p>
+    </section>
+
+    <!-- PAYRANGE BUTTON AT BOTTOM -->
+    <section class="card full">
+      <h3>Instrucciones de PayRange</h3>
+      <p style="margin:0 0 10px">¿Necesitas los pasos? Descarga el PDF abajo.</p>
+      <a class="btn" href="../PayRange_FreeTrial_Instructional_Poster_ESP.pdf" target="_blank" rel="noopener">
+        Instrucciones de PayRange (PDF)
+      </a>
+    </section>
+  </div>
+
 </div>
 
-<!-- SERVICIOS -->
-<div class="section services">
-  <h2>Servicios y Precios</h2>
-  <ul>
-    <li>Lavadora de 3 cargas — $4</li>
-    <li>Lavadora de 4 cargas — $5</li>
-    <li>Lavadora de 5 cargas — $6</li>
-    <li>Secadoras — $1.50 por 30 minutos</li>
-  </ul>
+<footer>© 2026 Sudz 4 Dudz</footer>
 
-  <h3>Lavar y Doblar</h3>
-  <p>
-    $1.75 por libra<br>
-    Entrega o recogida entre 2 PM y 7 PM
-  </p>
+<script>
+(function(){
+  function state(now){
+    var d = now.getDay(); // Tue=2 Wed=3
+    var m = now.getHours()*60 + now.getMinutes();
+    var show=false, dim=false;
 
-  <p>
-    Todas las máquinas aceptan monedas.<br>
-    Hay máquinas de cambio disponibles.<br>
-    Algunas máquinas aceptan PayRange.
-  </p>
-</div>
+    if (d===2 && m >= 17*60) show=true;
+    if (d===3){
+      if (m < 18*60+30) show=true;
+      else if (m < 20*60){ show=true; dim=true; }
+    }
+    return {show:show, dim:dim};
+  }
 
-<!-- WACKY WASH WEDNESDAY -->
-<div class="section wacky">
-  <strong>MIÉRCOLES DE LAVADO LOCO</strong><br>
-  50% DE DESCUENTO EN TODAS LAS LAVADORAS DE AUTOSERVICIO<br>
-  <small>
-    Promoción comienza el martes a las 5:00 PM<br>
-    El descuento se atenúa el miércoles a las 6:30 PM
-  </small>
-</div>
-
-<!-- PAYRANGE -->
-<div class="section">
-  <a class="button" href="../PayRange_FreeTrial_Instructional_Poster_ESP.pdf" target="_blank">
-    Instrucciones de PayRange (PDF)
-  </a>
-</div>
-
-<footer>
-  © 2026 Sudz 4 Dudz Lavandería
-</footer>
+  var el = document.getElementById('wwwBanner');
+  if (!el) return;
+  var st = state(new Date());
+  if (!st.show) {
+    el.style.display = 'none';
+  } else {
+    el.style.display = 'block';
+    if (st.dim) el.classList.add('dim');
+  }
+})();
+</script>
 
 </body>
 </html>
+
