@@ -2,54 +2,98 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sudz 4 Dudz Laundromat</title>
 
 <style>
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f6f6f6;
+  background: #f6f9fb;
   color: #222;
+  text-align: center;
 }
+
 header {
-  background: #1e90ff;
-  color: #fff;
-  padding: 16px;
-  text-align: center;
+  background: #e8f4fb;
+  padding: 20px;
 }
-.lang-toggle a {
-  color: #fff;
-  margin: 0 6px;
+
+header img {
+  max-width: 260px;
+}
+
+h1 {
+  margin: 10px 0 5px;
+}
+
+.hours {
   font-weight: bold;
-  text-decoration: underline;
+  margin-top: 10px;
 }
-.alert {
-  background: #ffeb3b;
-  padding: 14px;
-  text-align: center;
-  font-weight: bold;
-}
+
 .section {
-  padding: 16px;
+  background: #ffffff;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
-.cards {
-  display: flex;
-  gap: 12px;
+
+.highlight {
+  background: #fff3cd;
+  border: 2px solid #ffcc00;
+  font-size: 1.4em;
+  font-weight: bold;
 }
-.card {
-  flex: 1;
-  background: #fff;
-  padding: 12px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,.15);
+
+.wacky {
+  background: linear-gradient(45deg,#d9f1ff,#ffffff);
+  border: 3px dashed #1e90ff;
+  font-size: 1.3em;
 }
-footer {
+
+.dim {
+  opacity: 0.55;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1em;
+}
+
+.services li {
+  margin: 8px 0;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 24px;
   background: #1e90ff;
   color: #fff;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.lang-toggle {
+  margin-top: 15px;
+}
+
+.lang-toggle a {
+  margin: 0 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1e90ff;
+}
+
+footer {
+  margin: 40px 0 20px;
+  color: #666;
+  font-size: 0.9em;
 }
 </style>
 </head>
@@ -57,54 +101,97 @@ footer {
 <body>
 
 <header>
+  <img src="Sudz4Dudz_Logo_Bubbles.png" alt="Sudz 4 Dudz Logo">
   <h1>Sudz 4 Dudz Laundromat</h1>
   <p>846 W Pipeline Rd, Hurst, TX 76053</p>
-  <p>Open Daily 7AM • Last Wash 8PM (Sun 7PM)</p>
+
+  <div class="hours">
+    OPEN DAILY 7:00 AM<br>
+    Last Wash: 8:00 PM (Mon–Sat)<br>
+    Last Wash: 7:00 PM (Sunday)
+  </div>
+
   <div class="lang-toggle">
-    <a href="/">EN</a> | <a href="/es/">ES</a>
+    <a href="#" onclick="setLang('en')">English</a> |
+    <a href="#" onclick="setLang('es')">Español</a>
   </div>
 </header>
 
-<div class="alert">
-  🚨 FIRST WASH FREE — ALL THE TIME! 🚨<br>
-  🤪 WACKY WASH WEDNESDAY — Half-Price Washers<br>
-  <small>Tuesday 5:00 PM – Wednesday 6:30 PM</small>
+<!-- FIRST WASH FREE -->
+<div class="section highlight" id="ffw">
+  FIRST WASH FREE<br>
+  <small>Ask attendant or see in-store signage for details</small>
 </div>
 
-<div class="section">
+<!-- SERVICES -->
+<div class="section services" id="services-en">
   <h2>Services & Pricing</h2>
   <ul>
     <li>3-Load Washer — $4</li>
     <li>4-Load Washer — $5</li>
     <li>5-Load Washer — $6</li>
-    <li>Dryers — 30 minutes for $1.50</li>
+    <li>Dryers — $1.50 / 30 minutes</li>
   </ul>
+
+  <h3>Wash & Fold</h3>
+  <p>$1.75 per pound<br>
+  Drop-off or pickup between 2 PM – 7 PM</p>
+
+  <p>
+    All machines accept quarters.<br>
+    Change machines are available.<br>
+    Some machines are PayRange enabled.
+  </p>
 </div>
 
-<div class="section">
-  <h2>Payment Methods</h2>
-  <div class="cards">
-    <div class="card">
-      <strong>Quarters</strong><br>
-      Change machines available
-    </div>
-    <div class="card">
-      <strong>PayRange-Enabled Machines</strong><br>
-      Credit • Debit • Apple Pay • Google Pay
-    </div>
-  </div>
+<!-- WACKY WASH WEDNESDAY -->
+<div class="section wacky" id="wacky">
+  <strong>WACKY WASH WEDNESDAY</strong><br>
+  50% OFF ALL SELF-SERVICE WASHERS<br>
+  <small>
+    Tease begins Tuesday at 5:00 PM<br>
+    Discount dims Wednesday at 6:30 PM
+  </small>
 </div>
 
+<!-- PAYRANGE -->
 <div class="section">
-  <h2>Wash & Fold</h2>
-  <p>$1.75 per pound</p>
-  <p>Drop-off or pickup 2PM – 7PM</p>
+  <a class="button" href="PayRange_FreeTrial_Instructional_Poster.pdf" target="_blank">
+    PayRange Instructions (PDF)
+  </a>
 </div>
 
 <footer>
   © 2026 Sudz 4 Dudz Laundromat
 </footer>
 
+<script>
+function setLang(lang) {
+  if (lang === 'es') {
+    document.getElementById('services-en').innerHTML = `
+      <h2>Servicios y Precios</h2>
+      <ul>
+        <li>Lavadora 3 cargas — $4</li>
+        <li>Lavadora 4 cargas — $5</li>
+        <li>Lavadora 5 cargas — $6</li>
+        <li>Secadoras — $1.50 / 30 minutos</li>
+      </ul>
+
+      <h3>Lavar y Doblar</h3>
+      <p>$1.75 por libra<br>
+      Entrega o recogida de 2 PM – 7 PM</p>
+
+      <p>
+        Todas las máquinas aceptan monedas.<br>
+        Hay máquinas de cambio disponibles.<br>
+        Algunas máquinas aceptan PayRange.
+      </p>
+    `;
+  } else {
+    location.reload();
+  }
+}
+</script>
+
 </body>
 </html>
-
