@@ -69,6 +69,7 @@ li{margin:6px 0}
 .kv{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
 .kv li{padding:10px 12px;border-radius:12px;background:rgba(30,144,255,.10);border:1px solid rgba(30,144,255,.18);font-weight:900}
 .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:var(--blue);color:#fff;text-decoration:none;font-weight:900}
+
 footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13px}
 </style>
 </head>
@@ -99,6 +100,7 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
     <div class="badge">PayRange enabled machines</div>
   </section>
 
+  <!-- WWW ALWAYS VISIBLE -->
   <section class="banner www" id="wwwBanner">
     <h2>WACKY WASH WEDNESDAY</h2>
     <p><strong>50% OFF self-service washes</strong></p>
@@ -128,7 +130,9 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
 
     <section class="card full">
       <h3>PayRange Instructions</h3>
-      <a class="btn" href="PayRange_FreeTrial_Instructional_Poster.pdf" target="_blank">PayRange Instructions (PDF)</a>
+      <a class="btn" href="PayRange_FreeTrial_Instructional_Poster.pdf" target="_blank">
+        PayRange Instructions (PDF)
+      </a>
     </section>
   </div>
 
@@ -138,22 +142,17 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
 
 <script>
 (function(){
-  function state(now){
-    var d = now.getDay(); // Tue=2 Wed=3
-    var m = now.getHours()*60 + now.getMinutes();
-    var show=false, dim=false;
+  // WWW always visible.
+  // NOT dim on Tue & Wed.
+  // Dim Thu–Mon.
+  var el = document.getElementById('wwwBanner');
+  if (!el) return;
 
-    if (d===2 && m>=17*60){ show=true; dim=true; } // Tue teaser
-    if (d===3){ show=true; dim=false; }            // Wed full
+  var d = new Date().getDay(); // Sun=0 ... Sat=6
+  var dim = !(d === 2 || d === 3);
 
-    return {show:show, dim:dim};
-  }
-
-  var el=document.getElementById('wwwBanner');
-  if(!el) return;
-  var st=state(new Date());
-  el.style.display=st.show?'block':'none';
-  el.classList.toggle('dim',st.dim);
+  el.style.display = 'block';
+  el.classList.toggle('dim', dim);
 })();
 </script>
 
