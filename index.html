@@ -1,196 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sudz 4 Dudz Laundromat</title>
 
+<!-- Google-safe Spanish auto-redirect: only on first visit, only if browser is Spanish -->
+<script>
+(function () {
+  try {
+    const chosen = localStorage.getItem("s4d_lang_chosen");
+    const lang = (navigator.language || "").toLowerCase();
+    if (!chosen && lang.startsWith("es")) {
+      window.location.href = "/es/";
+    }
+  } catch (e) {}
+})();
+</script>
+
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f6f9fb;
-  color: #222;
-  text-align: center;
+:root{
+  --blue:#1e90ff;
+  --bg:#f6f9fb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#54606f;
+  --shadow:0 10px 22px rgba(0,0,0,.10);
+  --gold:#ffd64d;
+  --gold2:#fff3b0;
 }
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(180deg,#e8f4ff,#ffffff);padding:18px 14px 12px;text-align:center}
+.logo{max-width:320px;width:80vw;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.12))}
+h1{margin:10px 0 4px;font-size:clamp(24px,5vw,40px);letter-spacing:.7px}
+.addr{margin:0;color:var(--muted);font-weight:700}
+.hours{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:12px;background:#fff;box-shadow:var(--shadow);font-weight:900}
+.hours small{display:block;margin-top:5px;font-weight:700;color:var(--muted)}
+.lang{margin-top:12px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.lang a{padding:8px 12px;border-radius:10px;border:1px solid rgba(0,0,0,.12);background:#fff;text-decoration:none;font-weight:900;color:var(--text)}
+.lang a.active{background:var(--blue);border-color:transparent;color:#fff}
 
-header {
-  background: #e8f4fb;
-  padding: 20px;
-}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+.banner{border-radius:18px;padding:16px 14px;text-align:center;box-shadow:var(--shadow);margin:12px 0}
+.ffw{background:linear-gradient(135deg,var(--gold2),var(--gold));border:3px solid rgba(0,0,0,.10)}
+.ffw h2{margin:0 0 6px;font-size:clamp(22px,4.7vw,38px);letter-spacing:1px}
+.ffw p{margin:0;font-weight:800}
+.ffw .badge{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);font-weight:900;box-shadow:0 8px 16px rgba(0,0,0,.10)}
 
-header img {
-  max-width: 260px;
-}
+.www{background:linear-gradient(135deg,#d7f0ff,#a9ddff);border:2px dashed rgba(0,0,0,.22);display:none}
+.www.dim{opacity:.55;filter:saturate(.85)}
+.www h2{margin:0 0 6px;font-size:clamp(20px,4.3vw,34px)}
+.www p{margin:0}
+.small{color:var(--muted);font-size:13px;margin-top:8px}
 
-h1 {
-  margin: 10px 0 5px;
-}
-
-.hours {
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.section {
-  background: #ffffff;
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 900px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.highlight {
-  background: #fff3cd;
-  border: 2px solid #ffcc00;
-  font-size: 1.4em;
-  font-weight: bold;
-}
-
-.wacky {
-  background: linear-gradient(45deg,#d9f1ff,#ffffff);
-  border: 3px dashed #1e90ff;
-  font-size: 1.3em;
-}
-
-.dim {
-  opacity: 0.55;
-}
-
-.services ul {
-  list-style: none;
-  padding: 0;
-  font-size: 1.1em;
-}
-
-.services li {
-  margin: 8px 0;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 24px;
-  background: #1e90ff;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-.lang-toggle {
-  margin-top: 15px;
-}
-
-.lang-toggle a {
-  margin: 0 10px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #1e90ff;
-}
-
-footer {
-  margin: 40px 0 20px;
-  color: #666;
-  font-size: 0.9em;
-}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:14px}
+.card.full{grid-column:1 / -1}
+.card h3{margin:0 0 10px;color:var(--blue);font-size:20px}
+ul{margin:8px 0 0;padding-left:18px}
+li{margin:6px 0}
+.kv{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.kv li{padding:10px 12px;border-radius:12px;background:rgba(30,144,255,.10);border:1px solid rgba(30,144,255,.18);font-weight:900}
+.btn{display:inline-block;padding:12px 16px;border-radius:12px;background:var(--blue);color:#fff;text-decoration:none;font-weight:900}
+footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13px}
 </style>
 </head>
 
 <body>
-
 <header>
-  <img src="Sudz4Dudz_Logo_Bubbles.png" alt="Sudz 4 Dudz Logo">
+  <img class="logo" src="Sudz4Dudz_Logo_Bubbles.png" alt="Sudz 4 Dudz Logo" />
   <h1>Sudz 4 Dudz Laundromat</h1>
-  <p>846 W Pipeline Rd, Hurst, TX 76053</p>
+  <p class="addr">846 W Pipeline Rd, Hurst, TX 76053</p>
 
   <div class="hours">
-    OPEN DAILY 7:00 AM<br>
-    Last Wash: 8:00 PM (Mon–Sat)<br>
-    Last Wash: 7:00 PM (Sunday)
+    OPEN DAILY 7:00 AM
+    <small>Last Wash: Mon–Sat 8:00 PM · Sunday 7:00 PM</small>
   </div>
 
-  <div class="lang-toggle">
-    <a href="#" onclick="setLang('en')">English</a> |
-    <a href="#" onclick="setLang('es')">Español</a>
+  <div class="lang">
+    <a class="active" href="/" onclick="try{localStorage.setItem('s4d_lang_chosen','en')}catch(e){}">English</a>
+    <a href="/es/" onclick="try{localStorage.setItem('s4d_lang_chosen','es')}catch(e){}">Español</a>
   </div>
 </header>
 
-<!-- FIRST WASH FREE -->
-<div class="section highlight" id="ffw">
-  FIRST WASH FREE<br>
-  <small>Ask attendant or see in-store signage for details</small>
+<div class="wrap">
+
+  <!-- FFW ALWAYS -->
+  <section class="banner ffw" id="ffw">
+    <h2>FIRST WASH FREE</h2>
+    <p>New customers — ask us how to get your first wash free.</p>
+    <div class="badge">Ask in-store • Quick & easy</div>
+  </section>
+
+  <!-- WWW TIMED -->
+  <section class="banner www" id="wwwBanner">
+    <h2>WACKY WASH WEDNESDAY</h2>
+    <p><strong>50% OFF self-service washes</strong></p>
+    <div class="small">Shows Tue 5:00 PM (tease) → Wed 6:30 PM, then dims until close.</div>
+  </section>
+
+  <div class="grid">
+    <section class="card full">
+      <h3>Services & Pricing</h3>
+      <div class="grid" style="margin-top:0">
+        <div class="card" style="box-shadow:none;border:1px solid rgba(0,0,0,.08)">
+          <h3 style="margin-top:0">Self-Service Laundry</h3>
+          <ul>
+            <li>3-Load Washer: <strong>$4</strong></li>
+            <li>4-Load Washer: <strong>$5</strong></li>
+            <li>5-Load Washer: <strong>$6</strong></li>
+            <li>Dryers: <strong>$1.50 / 30 minutes</strong></li>
+          </ul>
+        </div>
+        <div class="card" style="box-shadow:none;border:1px solid rgba(0,0,0,.08)">
+          <h3 style="margin-top:0">Wash &amp; Fold</h3>
+          <p style="margin:0 0 6px"><strong>$1.75 per pound</strong></p>
+          <p style="margin:0">Drop-off or pick up <strong>2:00 PM – 7:00 PM</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Payment</h3>
+      <ul class="kv">
+        <li>All machines accept quarters</li>
+        <li>Change machines available</li>
+        <li>Some machines are PayRange-enabled</li>
+      </ul>
+      <p class="small">Look for the PayRange sticker on the machine.</p>
+    </section>
+
+    <section class="card">
+      <h3>About</h3>
+      <p style="margin:0">Clean, bright, and easy to use. Big machines for large loads and plenty of dryers.</p>
+    </section>
+
+    <!-- PAYRANGE BUTTON AT BOTTOM -->
+    <section class="card full">
+      <h3>PayRange Instructions</h3>
+      <p style="margin:0 0 10px">Need the step-by-step? Download the PDF below.</p>
+      <a class="btn" href="PayRange_FreeTrial_Instructional_Poster.pdf" target="_blank" rel="noopener">
+        PayRange Instructions (PDF)
+      </a>
+    </section>
+  </div>
+
 </div>
 
-<!-- SERVICES -->
-<div class="section services" id="services-en">
-  <h2>Services & Pricing</h2>
-  <ul>
-    <li>3-Load Washer — $4</li>
-    <li>4-Load Washer — $5</li>
-    <li>5-Load Washer — $6</li>
-    <li>Dryers — $1.50 / 30 minutes</li>
-  </ul>
-
-  <h3>Wash & Fold</h3>
-  <p>$1.75 per pound<br>
-  Drop-off or pickup between 2 PM – 7 PM</p>
-
-  <p>
-    All machines accept quarters.<br>
-    Change machines are available.<br>
-    Some machines are PayRange enabled.
-  </p>
-</div>
-
-<!-- WACKY WASH WEDNESDAY -->
-<div class="section wacky" id="wacky">
-  <strong>WACKY WASH WEDNESDAY</strong><br>
-  50% OFF ALL SELF-SERVICE WASHERS<br>
-  <small>
-    Tease begins Tuesday at 5:00 PM<br>
-    Discount dims Wednesday at 6:30 PM
-  </small>
-</div>
-
-<!-- PAYRANGE -->
-<div class="section">
-  <a class="button" href="PayRange_FreeTrial_Instructional_Poster.pdf" target="_blank">
-    PayRange Instructions (PDF)
-  </a>
-</div>
-
-<footer>
-  © 2026 Sudz 4 Dudz Laundromat
-</footer>
+<footer>© 2026 Sudz 4 Dudz</footer>
 
 <script>
-function setLang(lang) {
-  if (lang === 'es') {
-    document.getElementById('services-en').innerHTML = `
-      <h2>Servicios y Precios</h2>
-      <ul>
-        <li>Lavadora 3 cargas — $4</li>
-        <li>Lavadora 4 cargas — $5</li>
-        <li>Lavadora 5 cargas — $6</li>
-        <li>Secadoras — $1.50 / 30 minutos</li>
-      </ul>
+(function(){
+  // WWW timing:
+  // Show Tue >= 5:00 PM
+  // Show Wed < 6:30 PM
+  // Dim Wed 6:30 PM to close (8:00 PM)
+  function state(now){
+    var d = now.getDay(); // Tue=2 Wed=3
+    var m = now.getHours()*60 + now.getMinutes();
+    var show=false, dim=false;
 
-      <h3>Lavar y Doblar</h3>
-      <p>$1.75 por libra<br>
-      Entrega o recogida de 2 PM – 7 PM</p>
-
-      <p>
-        Todas las máquinas aceptan monedas.<br>
-        Hay máquinas de cambio disponibles.<br>
-        Algunas máquinas aceptan PayRange.
-      </p>
-    `;
-  } else {
-    location.reload();
+    if (d===2 && m >= 17*60) show=true;
+    if (d===3){
+      if (m < 18*60+30) show=true;
+      else if (m < 20*60){ show=true; dim=true; }
+    }
+    return {show:show, dim:dim};
   }
-}
+
+  var el = document.getElementById('wwwBanner');
+  if (!el) return;
+  var st = state(new Date());
+  if (!st.show) {
+    el.style.display = 'none';
+  } else {
+    el.style.display = 'block';
+    if (st.dim) el.classList.add('dim');
+  }
+})();
 </script>
 
 </body>
