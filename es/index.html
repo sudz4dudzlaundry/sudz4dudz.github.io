@@ -1,196 +1,151 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sudz 4 Dudz Lavandería</title>
-  <style>
-    :root{
-      --blue:#1e90ff;
-      --bg:#f6f6f6;
-      --text:#1f2937;
-      --card:#ffffff;
-      --shadow: 0 10px 22px rgba(0,0,0,.14);
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
-    header{background:var(--blue);color:#fff;padding:22px 16px;text-align:center}
-    .brand{margin:0;letter-spacing:.5px}
-    .brand-number{display:inline-block;padding:0 10px}
-    header p{margin:6px 0 0;opacity:.95}
-    .wrap{max-width:980px;margin:0 auto;padding:16px}
-    .lang{display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap}
-    .lang a{display:inline-block;padding:8px 14px;border-radius:10px;font-weight:800;text-decoration:none}
-    .lang .on{background:#fff;color:#111}
-    .lang .off{background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.35)}
-    .promo{margin:14px auto;border-radius:16px;padding:18px 14px;text-align:center;box-shadow:var(--shadow)}
-    .promo-kicker{font-size:.9rem;letter-spacing:1px;opacity:.9;margin-bottom:6px}
-    .promo-title{font-size:2.1rem;font-weight:900;line-height:1.1}
-    .promo-sub{margin-top:8px;font-size:1.05rem;opacity:.95}
-    .fwf{background:linear-gradient(135deg,#ffffff,#e9f4ff);border:2px solid rgba(30,144,255,.35)}
-    .fwf .promo-title{text-transform:uppercase;letter-spacing:1px}
-    .www{background:linear-gradient(45deg,#ffde59,#ff914d);color:#222;display:none}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px}
-    @media (min-width:720px){.grid{grid-template-columns:1fr 1fr}}
-    .card{background:var(--card);border-radius:14px;padding:14px 14px;border:1px solid rgba(0,0,0,.08);box-shadow:0 6px 14px rgba(0,0,0,.06)}
-    h2{margin:10px 0 8px;color:var(--blue)}
-    ul{margin:8px 0 0;padding-left:18px}
-    .pay-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
-    .pay-item{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,.08);background:#fff}
-    .ico{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#f2f5f9;border:1px solid rgba(0,0,0,.06);flex:0 0 auto}
-    .pay-title{font-weight:900;margin-bottom:2px}
-    .pay-sub{opacity:.88}
-    .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .chip{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;background:#f2f5f9;border:1px solid rgba(0,0,0,.08);font-weight:800}
-    .chip svg{width:18px;height:18px}
-    .note{font-size:.92rem;opacity:.85;margin-top:10px}
-    .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:var(--blue);color:#fff;text-decoration:none;font-weight:900}
-    footer{margin-top:24px;padding:12px 10px;text-align:center;background:var(--blue);color:#fff}
-    .spacer{height:24px}
-    @keyframes pop {0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
-    .fwf{animation:pop 2.2s ease-in-out infinite}
-    @media (prefers-reduced-motion: reduce){.fwf{animation:none}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudz 4 Dudz Lavandería</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f6f9fb;
+  color: #222;
+  text-align: center;
+}
+
+header {
+  background: #e8f4fb;
+  padding: 20px;
+}
+
+header img {
+  max-width: 260px;
+}
+
+h1 {
+  margin: 10px 0 5px;
+}
+
+.hours {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.section {
+  background: #ffffff;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.highlight {
+  background: #fff3cd;
+  border: 2px solid #ffcc00;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.wacky {
+  background: linear-gradient(45deg,#d9f1ff,#ffffff);
+  border: 3px dashed #1e90ff;
+  font-size: 1.3em;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1em;
+}
+
+.services li {
+  margin: 8px 0;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 24px;
+  background: #1e90ff;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+footer {
+  margin: 40px 0 20px;
+  color: #666;
+  font-size: 0.9em;
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <h1 class="brand">Sudz <span class="brand-number">4</span> Dudz Lavandería</h1>
-    <p>846 W. Pipeline Rd, Hurst TX 76053</p>
-    <p>Abierto diario 7AM — Última lavada: 8PM (Lun–Sáb), 7PM (Dom)</p>
-    <div class="lang">
-      <a class="on" href="/" onclick="localStorage.setItem('s4d_lang','en')">English</a>
-      <a class="off" href="/es/" onclick="localStorage.setItem('s4d_lang','es')">Español</a>
-    </div>
-  </header>
 
-  <div class="wrap">
-    <div id="fwf-banner" class="promo fwf">
-      <div class="promo-kicker">PROMOCIÓN PARA NUEVOS CLIENTES</div>
-      <div class="promo-title">⭐ PRIMERA LAVADA GRATIS ⭐</div>
-      <div class="promo-sub">Pregunte adentro o vea los detalles publicados en la tienda.</div>
-    </div>
+<header>
+  <img src="../Sudz4Dudz_Logo_Bubbles.png" alt="Sudz 4 Dudz Logo">
+  <h1>Sudz 4 Dudz Lavandería</h1>
+  <p>846 W Pipeline Rd, Hurst, TX 76053</p>
 
-    <div id="www-banner" class="promo www">
-      <div class="promo-title">🎉 WACKY WASH WEDNESDAY 🎉</div>
-      <div class="promo-sub">Lavadoras a mitad de precio — Mar 5:00 PM → Mié 6:30 PM</div>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <h2>Servicios y Precios</h2>
-        <ul>
-          <li>Lavadora 3 cargas: $4</li>
-          <li>Lavadora 4 cargas: $5</li>
-          <li>Lavadora 5 cargas: $6</li>
-          <li>Secadoras: $1.50 / 30 minutos</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Lavado y Doblado</h2>
-        <p style="margin:0 0 10px">$1.75 por libra. Entrega o recogida de 2PM a 7PM.</p>
-        <a class="btn" href="/PayRange_FreeTrial_Instructional_Poster.pdf" target="_blank" rel="noopener">Instrucciones de PayRange (PDF)</a>
-      </div>
-
-      <div class="card" style="grid-column:1/-1">
-        <h2>Métodos de Pago</h2>
-
-        <div class="pay-grid">
-          <div class="pay-item">
-            <div class="ico">🪙</div>
-            <div>
-              <div class="pay-title">Monedas (quarters)</div>
-              <div class="pay-sub">Todas las máquinas aceptan monedas.</div>
-            </div>
-          </div>
-
-          <div class="pay-item">
-            <div class="ico">💵</div>
-            <div>
-              <div class="pay-title">Máquinas de Cambio</div>
-              <div class="pay-sub">Hay máquinas para cambiar en la tienda.</div>
-            </div>
-          </div>
-
-          <div class="pay-item">
-            <div class="ico">📱</div>
-            <div>
-              <div class="pay-title">Máquinas con PayRange (algunas máquinas)</div>
-              <div class="pay-sub">Algunas máquinas aceptan PayRange. PayRange acepta tarjetas y pagos móviles por la app.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="chip-row" aria-label="Accepted via PayRange on enabled machines">
-          <div class="chip" title="Crédito Card">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
-              <path d="M3 10h18" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Crédito
-          </div>
-          <div class="chip" title="Débito Card">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
-              <path d="M7 14h6" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Débito
-          </div>
-          <div class="chip" title="Apple Pay">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7 8a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4V8Z" stroke="currentColor" stroke-width="2"/>
-              <path d="M10 9h4" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Apple Pay*
-          </div>
-          <div class="chip" title="Google Pay">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3a9 9 0 1 0 9 9" stroke="currentColor" stroke-width="2"/>
-              <path d="M21 12h-8v-4" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Google Pay*
-          </div>
-        </div>
-
-        <div class="note">
-          *La disponibilidad puede variar según su teléfono/tarjeta. Pregunte si no está seguro cuáles máquinas tienen PayRange.
-        </div>
-
-        <div class="note">
-          Nota: Estoy usando íconos genéricos (no son logotipos oficiales). Para usar logotipos oficiales (Visa/Mastercard/Apple Pay), lo más seguro es usar los archivos de los kits oficiales de cada marca y seguir sus reglas de uso.
-        </div>
-      </div>
-    </div>
-
-    <div class="spacer"></div>
+  <div class="hours">
+    ABIERTO TODOS LOS DÍAS A LAS 7:00 AM<br>
+    Último lavado: 8:00 PM (Lun–Sáb)<br>
+    Último lavado: 7:00 PM (Domingo)
   </div>
+</header>
 
-  <footer>&copy; 2026 Sudz 4 Dudz. Todos los derechos reservados.</footer>
+<!-- PRIMER LAVADO GRATIS -->
+<div class="section highlight">
+  PRIMER LAVADO GRATIS<br>
+  <small>Consulte con el encargado o vea los avisos en la tienda</small>
+</div>
 
-  <script>
-    (function () {
-      const www = document.getElementById('www-banner');
-      if (!www) return;
+<!-- SERVICIOS -->
+<div class="section services">
+  <h2>Servicios y Precios</h2>
+  <ul>
+    <li>Lavadora de 3 cargas — $4</li>
+    <li>Lavadora de 4 cargas — $5</li>
+    <li>Lavadora de 5 cargas — $6</li>
+    <li>Secadoras — $1.50 por 30 minutos</li>
+  </ul>
 
-      const now = new Date();
-      const day = now.getDay();
-      const mins = now.getHours() * 60 + now.getMinutes();
+  <h3>Lavar y Doblar</h3>
+  <p>
+    $1.75 por libra<br>
+    Entrega o recogida entre 2 PM y 7 PM
+  </p>
 
-      const isTueAfter5 = (day === 2 && mins >= (17 * 60));
-      const isWedBefore630 = (day === 3 && mins <= (18 * 60 + 30));
+  <p>
+    Todas las máquinas aceptan monedas.<br>
+    Hay máquinas de cambio disponibles.<br>
+    Algunas máquinas aceptan PayRange.
+  </p>
+</div>
 
-      www.style.display = (isTueAfter5 || isWedBefore630) ? 'block' : 'none';
-    })();
+<!-- WACKY WASH WEDNESDAY -->
+<div class="section wacky">
+  <strong>MIÉRCOLES DE LAVADO LOCO</strong><br>
+  50% DE DESCUENTO EN TODAS LAS LAVADORAS DE AUTOSERVICIO<br>
+  <small>
+    Promoción comienza el martes a las 5:00 PM<br>
+    El descuento se atenúa el miércoles a las 6:30 PM
+  </small>
+</div>
 
-    (function () {
-      try {
-        const pref = localStorage.getItem('s4d_lang');
-        const path = window.location.pathname;
-        if (pref === 'es' && (path === '/' || path === '/index.html')) {
-          window.location.href = '/es/';
-        }
-      } catch (e) {}
-    })();
-  </script>
+<!-- PAYRANGE -->
+<div class="section">
+  <a class="button" href="../PayRange_FreeTrial_Instructional_Poster_ESP.pdf" target="_blank">
+    Instrucciones de PayRange (PDF)
+  </a>
+</div>
+
+<footer>
+  © 2026 Sudz 4 Dudz Lavandería
+</footer>
+
 </body>
 </html>
