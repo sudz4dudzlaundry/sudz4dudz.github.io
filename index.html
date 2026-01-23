@@ -94,4 +94,89 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
     <div class="badge">PayRange enabled machines</div>
   </section>
 
-  <!-
+  <!-- WWW TIMED -->
+  <section class="banner www" id="wwwBanner">
+    <h2>WACKY WASH WEDNESDAY</h2>
+    <p><strong>50% OFF self-service washes</strong></p>
+    <div class="small">Shows Tue 5:00 PM (tease) → Wed 6:30 PM, then dims until close.</div>
+  </section>
+
+  <div class="grid">
+    <section class="card full">
+      <h3>Services & Pricing</h3>
+      <div class="grid" style="margin-top:0">
+        <div class="card" style="box-shadow:none;border:1px solid rgba(0,0,0,.08)">
+          <h3 style="margin-top:0">Self-Service Laundry</h3>
+          <ul>
+            <li>3-Load Washer: <strong>$4</strong></li>
+            <li>4-Load Washer: <strong>$5</strong></li>
+            <li>5-Load Washer: <strong>$6</strong></li>
+            <li>Dryers: <strong>$1.50 / 30 minutes</strong></li>
+          </ul>
+        </div>
+        <div class="card" style="box-shadow:none;border:1px solid rgba(0,0,0,.08)">
+          <h3 style="margin-top:0">Wash &amp; Fold</h3>
+          <p style="margin:0 0 6px"><strong>$1.75 per pound</strong></p>
+          <p style="margin:0">Drop-off or pick up <strong>2:00 PM – 7:00 PM</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Payment</h3>
+      <ul class="kv">
+        <li>All machines accept quarters</li>
+        <li>Change machines available</li>
+        <li>Some machines are PayRange-enabled</li>
+      </ul>
+      <p class="small">Look for the PayRange sticker on the machine.</p>
+    </section>
+
+    <section class="card">
+      <h3>About</h3>
+      <p style="margin:0">Clean, bright, and easy to use. Big machines for large loads and plenty of dryers.</p>
+    </section>
+
+    <section class="card full">
+      <h3>PayRange Instructions</h3>
+      <p style="margin:0 0 10px">Need the step-by-step? Download the PDF below.</p>
+      <a class="btn" href="PayRange_FreeTrial_Instructional_Poster.pdf" target="_blank" rel="noopener">
+        PayRange Instructions (PDF)
+      </a>
+    </section>
+  </div>
+
+</div>
+
+<footer>© 2026 Sudz 4 Dudz</footer>
+
+<script>
+(function(){
+  // Add ?previewwww=1 to the URL to force it visible for testing.
+  var params = new URLSearchParams(location.search);
+  var preview = params.get('previewwww') === '1';
+
+  function state(now){
+    var d = now.getDay(); // Tue=2 Wed=3
+    var m = now.getHours()*60 + now.getMinutes();
+    var show=false, dim=false;
+
+    if (d===2 && m >= 17*60) show=true;          // Tue after 5pm
+    if (d===3){
+      if (m < 18*60+30) show=true;               // Wed before 6:30pm
+      else if (m < 20*60){ show=true; dim=true; }// Wed 6:30–8pm dim
+    }
+    return {show:show, dim:dim};
+  }
+
+  var el = document.getElementById('wwwBanner');
+  if (!el) return;
+
+  var st = preview ? {show:true, dim:false} : state(new Date());
+  el.style.display = st.show ? 'block' : 'none';
+  el.classList.toggle('dim', st.dim);
+})();
+</script>
+
+</body>
+</html>
