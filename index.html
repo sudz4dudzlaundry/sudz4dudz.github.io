@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sudz 4 Dudz Laundromat</title>
 
+<!-- Spanish auto-redirect (first visit only) -->
+<script>
+(function () {
+  try {
+    const chosen = localStorage.getItem("s4d_lang_chosen");
+    const lang = (navigator.language || "").toLowerCase();
+    if (!chosen && lang.startsWith("es")) {
+      window.location.href = "/es/";
+    }
+  } catch (e) {}
+})();
+</script>
+
 <style>
 :root{
   --blue:#1e90ff;
@@ -20,86 +33,102 @@
 body{margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
 header{background:linear-gradient(180deg,#e8f4ff,#ffffff);padding:18px 14px 12px;text-align:center}
 .logo{max-width:320px;width:80vw;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.12))}
-h1{margin:10px 0 4px;font-size:clamp(24px,5vw,40px)}
+h1{margin:10px 0 4px;font-size:clamp(24px,5vw,40px);letter-spacing:.7px}
 .addr{margin:0;color:var(--muted);font-weight:700}
+.phone{margin:6px 0 0;font-weight:900}
+.phone a{color:var(--text);text-decoration:none;border-bottom:2px dotted rgba(0,0,0,.25)}
+
+.hours{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:12px;background:#fff;box-shadow:var(--shadow);font-weight:900}
+.hours small{display:block;margin-top:5px;font-weight:700;color:var(--muted)}
+
+.lang{margin-top:12px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.lang a{padding:8px 12px;border-radius:10px;border:1px solid rgba(0,0,0,.12);background:#fff;text-decoration:none;font-weight:900;color:var(--text)}
+.lang a.active{background:var(--blue);border-color:transparent;color:#fff}
 
 .wrap{max-width:980px;margin:0 auto;padding:14px}
 .banner{border-radius:18px;padding:16px 14px;text-align:center;box-shadow:var(--shadow);margin:12px 0}
 
-.ffw{
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
-  border:3px solid rgba(0,0,0,.10)
-}
+.ffw{background:linear-gradient(135deg,var(--gold2),var(--gold));border:3px solid rgba(0,0,0,.10)}
 .ffw h2{margin:0 0 6px;font-size:clamp(22px,4.7vw,38px)}
 .ffw p{margin:0;font-weight:800}
-.ffw .badge{
-  display:inline-block;
-  margin-top:10px;
-  padding:10px 14px;
-  border-radius:999px;
-  background:rgba(255,255,255,.92);
-  font-weight:900
-}
+.ffw .badge{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);font-weight:900}
 
-.www{
-  background:linear-gradient(135deg,#d7f0ff,#a9ddff);
-  border:2px dashed rgba(0,0,0,.22);
-}
+.www{background:linear-gradient(135deg,#d7f0ff,#a9ddff);border:2px dashed rgba(0,0,0,.22)}
 .www.dim{opacity:.55;filter:saturate(.85)}
 .www h2{margin:0 0 6px;font-size:clamp(20px,4.3vw,34px)}
 .www p{margin:0}
-
 .small{color:var(--muted);font-size:13px;margin-top:8px}
 
 .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
 @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
-
-.card{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:14px}
+.card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:14px}
 .card.full{grid-column:1 / -1}
 .card h3{margin:0 0 10px;color:var(--blue)}
-
-footer{text-align:center;padding:20px;color:var(--muted);font-size:13px}
+ul{margin:8px 0 0;padding-left:18px}
+li{margin:6px 0}
+.kv{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.kv li{padding:10px 12px;border-radius:12px;background:rgba(30,144,255,.10);border:1px solid rgba(30,144,255,.18);font-weight:900}
+.btn{display:inline-block;padding:12px 16px;border-radius:12px;background:var(--blue);color:#fff;text-decoration:none;font-weight:900}
+footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13px}
 </style>
 </head>
 
 <body>
-
 <header>
   <img class="logo" src="Sudz4Dudz_Logo_Bubbles.png" alt="Sudz 4 Dudz Logo">
   <h1>Sudz 4 Dudz Laundromat</h1>
   <p class="addr">846 W Pipeline Rd, Hurst, TX 76053</p>
+  <p class="phone">Call: <a href="tel:+19723065261">972-306-5261</a></p>
+
+  <div class="hours">
+    OPEN DAILY 7:00 AM
+    <small>Last Wash: Mon–Sat 8:00 PM · Sunday 7:00 PM</small>
+  </div>
+
+  <div class="lang">
+    <a class="active" href="/" onclick="try{localStorage.setItem('s4d_lang_chosen','en')}catch(e){}">English</a>
+    <a href="/es/" onclick="try{localStorage.setItem('s4d_lang_chosen','es')}catch(e){}">Español</a>
+  </div>
 </header>
 
 <div class="wrap">
 
-  <!-- FIRST WASH FREE -->
   <section class="banner ffw">
     <h2>FIRST WASH FREE</h2>
     <p>Available on the PayRange app</p>
     <div class="badge">PayRange enabled machines</div>
   </section>
 
-  <!-- WACKY WASH WEDNESDAY -->
   <section class="banner www" id="wwwBanner">
     <h2>WACKY WASH WEDNESDAY</h2>
     <p><strong>50% OFF self-service washes</strong></p>
-    <div class="small">Tuesdays & Wednesdays</div>
+    <div class="small">Wednesdays only</div>
   </section>
 
   <div class="grid">
     <section class="card full">
       <h3>Services & Pricing</h3>
-      <p>Self-service washers, dryers, and wash & fold available.</p>
+      <ul>
+        <li>3-Load Washer: <strong>$4</strong></li>
+        <li>4-Load Washer: <strong>$5</strong></li>
+        <li>5-Load Washer: <strong>$6</strong></li>
+        <li>Dryers: <strong>$1.50 / 30 minutes</strong></li>
+      </ul>
+      <p class="small"><strong>Wash &amp; Fold:</strong> $1.75/lb · 2–7 PM</p>
     </section>
 
     <section class="card">
       <h3>Payment</h3>
-      <p>Quarters & PayRange accepted.</p>
+      <ul class="kv">
+        <li>Quarters</li>
+        <li>Change Machines</li>
+        <li>PayRange</li>
+      </ul>
     </section>
 
-    <section class="card">
-      <h3>About</h3>
-      <p>Clean, bright, big machines for big loads.</p>
+    <section class="card full">
+      <h3>PayRange Instructions</h3>
+      <a class="btn" href="PayRange_FreeTrial_Instructional_Poster.pdf" target="_blank">PayRange Instructions (PDF)</a>
     </section>
   </div>
 
@@ -108,9 +137,26 @@ footer{text-align:center;padding:20px;color:var(--muted);font-size:13px}
 <footer>© 2026 Sudz 4 Dudz</footer>
 
 <script>
-/* FORCE WWW TO SHOW FOR NOW */
-document.getElementById('wwwBanner').style.display = 'block';
+(function(){
+  function state(now){
+    var d = now.getDay(); // Tue=2 Wed=3
+    var m = now.getHours()*60 + now.getMinutes();
+    var show=false, dim=false;
+
+    if (d===2 && m>=17*60){ show=true; dim=true; } // Tue teaser
+    if (d===3){ show=true; dim=false; }            // Wed full
+
+    return {show:show, dim:dim};
+  }
+
+  var el=document.getElementById('wwwBanner');
+  if(!el) return;
+  var st=state(new Date());
+  el.style.display=st.show?'block':'none';
+  el.classList.toggle('dim',st.dim);
+})();
 </script>
 
 </body>
 </html>
+
