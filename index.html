@@ -50,10 +50,9 @@ h1{margin:10px 0 4px;font-size:clamp(24px,5vw,40px);letter-spacing:.7px}
 .ffw p{margin:0;font-weight:800}
 .ffw .badge{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);font-weight:900;box-shadow:0 8px 16px rgba(0,0,0,.10)}
 
-
-.www{background:linear-gradient(135deg,#d7f0ff,#a9ddff);  border:2px dashed rgba(0,0,0,.22);  
-.www.dim{opacity:.55;filter:saturate(.85)}
-.www h2{margin:0 0 6px;font-size:clamp(20px,4.3vw,34px)}
+.www{background:linear-gradient(135deg,#d7f0ff,#a9ddff);  border:2px dashed rgba(0,0,0,.22);}
+.www.dim{opacity:.55;filter:saturate(.85);}
+.www h2{margin:0 0 6px;font-size:clamp(20px,4.3vw,34px);}
 .www p{margin:0}
 .small{color:var(--muted);font-size:13px;margin-top:8px}
 
@@ -185,5 +184,28 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
 })();
 </script>
 
+<script>
+(function(){
+  function state(now){
+    var d = now.getDay(); // Tue=2 Wed=3
+    var m = now.getHours()*60 + now.getMinutes();
+    var show=false, dim=false;
+
+    if (d===2 && m >= 17*60) show=true;                 // Tue after 5pm
+    if (d===3){
+      if (m < 18*60+30) show=true;                      // Wed before 6:30pm
+      else if (m < 20*60){ show=true; dim=true; }       // Wed 6:30–8pm dim
+    }
+    return {show:show, dim:dim};
+  }
+
+  var el = document.getElementById('wwwBanner');
+  if (!el) return;
+
+  var st = state(new Date());
+  el.style.display = st.show ? 'block' : 'none';
+  el.classList.toggle('dim', st.dim);
+})();
+  
 </body>
 </html>
