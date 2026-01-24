@@ -63,8 +63,8 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
 
 <body>
 <header>
-  <!-- FIXED LOGO PATH -->
-  <img class="logo" src="/Sudz4Dudz_Logo_Bubbles.png" alt="Logo Sudz 4 Dudz">
+  <!-- FIX: use ../ to reach root from /es/ -->
+  <img class="logo" src="../Sudz4Dudz_Logo_Bubbles.png" alt="Logo Sudz 4 Dudz">
   <h1>Sudz 4 Dudz Lavandería</h1>
   <p class="addr">846 W Pipeline Rd, Hurst, TX 76053</p>
   <p class="phone">Tel: <a href="tel:+19723065261">972-306-5261</a></p>
@@ -88,10 +88,9 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
     <div class="badge">Máquinas con PayRange</div>
   </section>
 
-  <!-- WWW SIEMPRE VISIBLE -->
   <section class="banner www" id="wwwBanner">
     <h2>MIÉRCOLES DE LAVADO LOCO</h2>
-    <p><strong>50% DE DESCUENTO en lavadoras de autoservicio</strong></p>
+    <p><strong>50% DE DESCUENTO</strong> en lavadoras de autoservicio</p>
     <div class="small">Solo los miércoles</div>
   </section>
 
@@ -118,8 +117,8 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
 
     <section class="card full">
       <h3>Instrucciones de PayRange</h3>
-      <!-- FIXED PDF PATH -->
-      <a class="btn" href="/PayRange_FreeTrial_Instructional_Poster_ESP.pdf" target="_blank">
+      <!-- FIX: use ../ to reach root from /es/ -->
+      <a class="btn" href="../PayRange_FreeTrial_Instructional_Poster_ESP.pdf" target="_blank">
         Instrucciones PayRange (PDF)
       </a>
     </section>
@@ -147,13 +146,4 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
 
 </body>
 </html>
-
-  var dim = !(d === 2 || d === 3);
-
-  el.style.display = 'block';
-  el.classList.toggle('dim', dim);
-})();
-</script>
-
-</body>
-</html>
+>
