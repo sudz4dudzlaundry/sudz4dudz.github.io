@@ -22,20 +22,25 @@ header{background:linear-gradient(180deg,#e8f4ff,#ffffff);padding:18px 14px 12px
 .logo{max-width:320px;width:80vw;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.12))}
 h1{margin:10px 0 4px;font-size:clamp(24px,5vw,40px);letter-spacing:.7px}
 .addr{margin:0;color:var(--muted);font-weight:700}
+.phone{margin:6px 0 0;font-weight:900}
+.phone a{color:var(--text);text-decoration:none;border-bottom:2px dotted rgba(0,0,0,.25)}
+
 .hours{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:12px;background:#fff;box-shadow:var(--shadow);font-weight:900}
-.hours small{display:block;margin-top:5px;font-weight:700;color:var(--muted);font-size:13px}
+.hours small{display:block;margin-top:5px;font-weight:700;color:var(--muted)}
+
 .lang{margin-top:12px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
 .lang a{padding:8px 12px;border-radius:10px;border:1px solid rgba(0,0,0,.12);background:#fff;text-decoration:none;font-weight:900;color:var(--text)}
 .lang a.active{background:var(--blue);border-color:transparent;color:#fff}
 
 .wrap{max-width:980px;margin:0 auto;padding:14px}
 .banner{border-radius:18px;padding:16px 14px;text-align:center;box-shadow:var(--shadow);margin:12px 0}
-.ffw{background:linear-gradient(135deg,var(--gold2),var(--gold));border:3px solid rgba(0,0,0,.10)}
-.ffw h2{margin:0 0 6px;font-size:clamp(22px,4.7vw,38px);letter-spacing:1px}
-.ffw p{margin:0;font-weight:800}
-.ffw .badge{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);font-weight:900;box-shadow:0 8px 16px rgba(0,0,0,.10)}
 
-.www{background:linear-gradient(135deg,#d7f0ff,#a9ddff);border:2px dashed rgba(0,0,0,.22);display:none}
+.ffw{background:linear-gradient(135deg,var(--gold2),var(--gold));border:3px solid rgba(0,0,0,.10)}
+.ffw h2{margin:0 0 6px;font-size:clamp(22px,4.7vw,38px)}
+.ffw p{margin:0;font-weight:800}
+.ffw .badge{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);font-weight:900}
+
+.www{background:linear-gradient(135deg,#d7f0ff,#a9ddff);border:2px dashed rgba(0,0,0,.22)}
 .www.dim{opacity:.55;filter:saturate(.85)}
 .www h2{margin:0 0 6px;font-size:clamp(20px,4.3vw,34px)}
 .www p{margin:0}
@@ -45,25 +50,27 @@ h1{margin:10px 0 4px;font-size:clamp(24px,5vw,40px);letter-spacing:.7px}
 @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
 .card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:14px}
 .card.full{grid-column:1 / -1}
-.card h3{margin:0 0 10px;color:var(--blue);font-size:20px}
+.card h3{margin:0 0 10px;color:var(--blue)}
 ul{margin:8px 0 0;padding-left:18px}
 li{margin:6px 0}
 .kv{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
 .kv li{padding:10px 12px;border-radius:12px;background:rgba(30,144,255,.10);border:1px solid rgba(30,144,255,.18);font-weight:900}
 .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:var(--blue);color:#fff;text-decoration:none;font-weight:900}
+
 footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13px}
 </style>
 </head>
 
 <body>
 <header>
-  <img class="logo" src="../Sudz4Dudz_Logo_Bubbles.png" alt="Sudz 4 Dudz Logo" />
+  <img class="logo" src="Sudz4Dudz_Logo_Bubbles.png" alt="Logo Sudz 4 Dudz">
   <h1>Sudz 4 Dudz Lavandería</h1>
   <p class="addr">846 W Pipeline Rd, Hurst, TX 76053</p>
+  <p class="phone">Tel: <a href="tel:+19723065261">972-306-5261</a></p>
 
   <div class="hours">
     ABIERTO TODOS LOS DÍAS 7:00 AM
-    <small>Último lavado: Lun–Sáb 8:00 PM · Domingo 7:00 PM</small>
+    <small>Última lavada: Lun–Sáb 8:00 PM · Domingo 7:00 PM</small>
   </div>
 
   <div class="lang">
@@ -74,62 +81,44 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
 
 <div class="wrap">
 
-  <!-- FFW ALWAYS -->
   <section class="banner ffw">
     <h2>PRIMERA LAVADA GRATIS</h2>
-    <p>Nuevos clientes — pregúntanos cómo obtener tu primera lavada gratis.</p>
-    <div class="badge">Pregunta en tienda • Rápido y fácil</div>
+    <p>Disponible en la app PayRange</p>
+    <div class="badge">Máquinas con PayRange</div>
   </section>
 
-  <!-- WWW TIMED -->
+  <!-- WWW SIEMPRE VISIBLE -->
   <section class="banner www" id="wwwBanner">
     <h2>MIÉRCOLES DE LAVADO LOCO</h2>
-    <p><strong>50% DE DESCUENTO</strong> en lavadas de autoservicio</p>
-    <div class="small">Se muestra mar 5:00 PM (tease) → mié 6:30 PM, luego se atenúa hasta el cierre.</div>
+    <p><strong>50% DE DESCUENTO en lavadoras de autoservicio</strong></p>
+    <div class="small">Solo los miércoles</div>
   </section>
 
   <div class="grid">
     <section class="card full">
       <h3>Servicios y Precios</h3>
-      <div class="grid" style="margin-top:0">
-        <div class="card" style="box-shadow:none;border:1px solid rgba(0,0,0,.08)">
-          <h3 style="margin-top:0">Lavado de Autoservicio</h3>
-          <ul>
-            <li>Lavadora 3 cargas: <strong>$4</strong></li>
-            <li>Lavadora 4 cargas: <strong>$5</strong></li>
-            <li>Lavadora 5 cargas: <strong>$6</strong></li>
-            <li>Secadoras: <strong>$1.50 / 30 minutos</strong></li>
-          </ul>
-        </div>
-        <div class="card" style="box-shadow:none;border:1px solid rgba(0,0,0,.08)">
-          <h3 style="margin-top:0">Lavado y Doblado</h3>
-          <p style="margin:0 0 6px"><strong>$1.75 por libra</strong></p>
-          <p style="margin:0">Entrega o recogida <strong>2:00 PM – 7:00 PM</strong></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h3>Pago</h3>
-      <ul class="kv">
-        <li>Todas las máquinas aceptan monedas</li>
-        <li>Hay máquinas de cambio</li>
-        <li>Algunas máquinas tienen PayRange</li>
+      <ul>
+        <li>Lavadora 3 cargas: <strong>$4</strong></li>
+        <li>Lavadora 4 cargas: <strong>$5</strong></li>
+        <li>Lavadora 5 cargas: <strong>$6</strong></li>
+        <li>Secadoras: <strong>$1.50 / 30 minutos</strong></li>
       </ul>
-      <p class="small">Busca la calcomanía de PayRange en la máquina.</p>
+      <p class="small"><strong>Lavar y Doblar:</strong> $1.75 por libra · Servicio de 2–7 PM</p>
     </section>
 
     <section class="card">
-      <h3>Acerca de</h3>
-      <p style="margin:0">Limpio, brillante y fácil de usar. Máquinas grandes para cargas grandes y muchas secadoras.</p>
+      <h3>Formas de Pago</h3>
+      <ul class="kv">
+        <li>Monedas</li>
+        <li>Cambio disponible</li>
+        <li>PayRange (Apple Pay, Google Pay, crédito y débito)</li>
+      </ul>
     </section>
 
-    <!-- PAYRANGE BUTTON AT BOTTOM -->
     <section class="card full">
       <h3>Instrucciones de PayRange</h3>
-      <p style="margin:0 0 10px">¿Necesitas los pasos? Descarga el PDF abajo.</p>
-      <a class="btn" href="../PayRange_FreeTrial_Instructional_Poster_ESP.pdf" target="_blank" rel="noopener">
-        Instrucciones de PayRange (PDF)
+      <a class="btn" href="PayRange_FreeTrial_Instructional_Poster.pdf" target="_blank">
+        Instrucciones PayRange (PDF)
       </a>
     </section>
   </div>
@@ -140,31 +129,19 @@ footer{text-align:center;padding:18px 10px 24px;color:var(--muted);font-size:13p
 
 <script>
 (function(){
-  function state(now){
-    var d = now.getDay(); // Tue=2 Wed=3
-    var m = now.getHours()*60 + now.getMinutes();
-    var show=false, dim=false;
-
-    if (d===2 && m >= 17*60) show=true;
-    if (d===3){
-      if (m < 18*60+30) show=true;
-      else if (m < 20*60){ show=true; dim=true; }
-    }
-    return {show:show, dim:dim};
-  }
-
+  // WWW siempre visible
+  // NO atenuado martes y miércoles
+  // Atenuado jueves a lunes
   var el = document.getElementById('wwwBanner');
   if (!el) return;
-  var st = state(new Date());
-  if (!st.show) {
-    el.style.display = 'none';
-  } else {
-    el.style.display = 'block';
-    if (st.dim) el.classList.add('dim');
-  }
+
+  var d = new Date().getDay(); // Dom=0 ... Sáb=6
+  var dim = !(d === 2 || d === 3);
+
+  el.style.display = 'block';
+  el.classList.toggle('dim', dim);
 })();
 </script>
 
 </body>
 </html>
-
